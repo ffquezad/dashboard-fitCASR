@@ -1,0 +1,42 @@
+# Dashboard FIT 2025–26
+## Cómo usar este dashboard
+
+### Instalación (solo la primera vez)
+
+1. Descarga e instala Python desde https://www.python.org/downloads/
+   → Marca la opción "Add Python to PATH" durante la instalación
+
+2. Abre la terminal (en Windows: busca "cmd" en el menú inicio)
+
+3. Navega a la carpeta donde guardaste los archivos:
+   cd ruta/a/tu/carpeta
+
+4. Instala las dependencias (solo una vez):
+   pip install -r requirements.txt
+
+### Ejecutar el dashboard
+
+Cada vez que quieras ver el dashboard:
+
+1. Abre la terminal
+2. Ve a la carpeta del proyecto:
+   cd ruta/a/tu/carpeta
+3. Ejecuta:
+   streamlit run dashboard_fit.py
+4. Se abrirá automáticamente en tu navegador
+
+### Actualizar los datos
+
+1. Abre el dashboard (paso anterior)
+2. Haz clic en "Browse files" o arrastra tu Excel actualizado
+3. El dashboard se actualiza automáticamente con los nuevos datos
+
+### Archivos necesarios
+- dashboard_fit.py  → el dashboard (no modificar)
+- requirements.txt  → dependencias (no modificar)
+- FIT_2025-26.xlsx  → tu archivo Excel (este es el que actualizas)
+
+### Requisitos del Excel
+El archivo debe tener una hoja llamada "FIT" con las columnas:
+HOSPITAL, GENERO, EDAD, Resultado FIT, F. COLONOSCOPIA,
+BIOPSIA, POLIPO MAS GRANDE, Dias Bp, IC, CITACION
