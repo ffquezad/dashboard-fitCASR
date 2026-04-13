@@ -43,11 +43,15 @@ SPREADSHEET_ID = "1PYnTTE5DO9VNXOwwjJKTUHcPw93TtcLJ"
 def cargar_datos():
     creds = Credentials.from_service_account_info(
         st.secrets["gcp_service_account"],
-        scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"]
+        scopes=[
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive",
+        ]
     )
     gc = gspread.authorize(creds)
     ws = gc.open_by_key(SPREADSHEET_ID).worksheet("FIT")
-    df = pd.DataFrame(ws.get_all_records())
+    data = ws.get_all_values()
+    df = pd.DataFrame(data[1:], columns=data[0])
 
     df['resultado_num'] = pd.to_numeric(df['Resultado FIT'], errors='coerce')
     df['fit_pos'] = df['resultado_num'] >= 20
